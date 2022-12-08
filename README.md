@@ -1,6 +1,6 @@
 # Xibalbá-frontend
 
-## Date: 12/7/20211
+## Date: 12/7/2022
 
 ### By:Kathya Castaneda
 
