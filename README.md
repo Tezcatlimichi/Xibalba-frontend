@@ -5,14 +5,13 @@
 ### By:Kathya Castaneda
 
 [Trello](https://trello.com/b/PckKLmOJ/xibalba)|
-[Heroku]()|
-[LinkedIn](https://www.linkedin.com/in/carlos-hidalgo-linkin/) | [GitHub](https://github.com/pancholo35)
+[LinkedIn](https://www.linkedin.com/in/kathya-castaneda/) | [GitHub](https://github.com/Tezcatlimichi)
 
 ---
 
 ### **_Description_**
 
-#### Xibalba is the name of the underworld in Maya mythology. The entrance to Xibalba was traditionally held to be a cave in the vicinity of Cobán, Guatemala. In this website you will be able to discover the many entrances to the underworld and learn how to explore them in a responsible way.
+#### Xibalba is the name of the underworld in Maya mythology. The entrance to Xibalba was traditionally held to be a cave in the vicinity of Cobán, Guatemala. In this website you will be able to discover the many entrances to the underworld and document your own explorations!
 
 ---
 
