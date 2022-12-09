@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { UNSAFE_NavigationContext, useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 const Country = () => {
@@ -18,6 +18,9 @@ const Country = () => {
 
   const viewCave = (caveId) => {
     navigate(`/countries/${id}/cave/${caveId}`)
+  }
+  const viewUnderwater = (underwaterId) => {
+    navigate(`/countries/${id}/underwater/${underwaterId}`)
   }
   return (
     <div>
@@ -39,7 +42,15 @@ const Country = () => {
       <div>
         <h1> Underwater Caves</h1>
         {country
-          ? country.Underwaters.map((cave) => <h2>{cave.name}</h2>)
+          ? country.Underwaters.map((cave) => (
+              <h2
+                onClick={() => {
+                  viewUnderwater(cave.id)
+                }}
+              >
+                {cave.name}
+              </h2>
+            ))
           : null}
       </div>
     </div>
