@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useParams, useNavigate } from 'react-router-dom'
+
 const Countries = () => {
+  let navigate = useNavigate()
   const [countries, setCountries] = useState([])
 
   useEffect(() => {
@@ -11,10 +14,21 @@ const Countries = () => {
     }
     getCountries()
   }, [])
+
+  const viewCountry = (id) => {
+    navigate(`/countries/${id}`)
+  }
+
   return (
     <div>
       {countries.map((country) => (
-        <h1>{country.name}</h1>
+        <div
+          onClick={() => {
+            viewCountry(country.id)
+          }}
+        >
+          <h1>{country.name}</h1>
+        </div>
       ))}
     </div>
   )
