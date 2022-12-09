@@ -19,9 +19,10 @@ const Country = () => {
   return (
     <div>
       <h1>{country.name}</h1>
-      <h1>Underwater Caves</h1>
-      {country ? country.Caves.map((cave) => <h2>{cave.name}</h2>) : null}
       <h1>Caves</h1>
+      {country ? country.Caves.map((cave) => <h2>{cave.name}</h2>) : null}
+      <h1> Underwater Caves</h1>
+      {country ? country.Underwaters.map((cave) => <h2>{cave.name}</h2>) : null}
     </div>
   )
 }
