@@ -14,12 +14,20 @@ const Animals = () => {
     getFuana()
   }, [])
 
+  const viewAnimal = (id) => {
+    navigate(`/animals/${id}`)
+  }
+
   return (
     <div>
       <h1>Animals</h1>
       {fuana
         ? fuana.map((creature) => (
-            <div>
+            <div
+              onClick={() => {
+                viewAnimal(creature.id)
+              }}
+            >
               <h2>{creature.commonName}</h2>
             </div>
           ))
