@@ -21,6 +21,7 @@ function App() {
             path="/countries/:id/underwater/:caveId"
             element={<Underwater />}
           />
+          <Route path="/animals" element={<Animals />} />
         </Routes>
       </main>
     </div>
