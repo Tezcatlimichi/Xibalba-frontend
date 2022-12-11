@@ -5,6 +5,7 @@ import Country from './pages/Country'
 import Cave from './components/Cave'
 import Underwater from './components/Underwater'
 import Home from './pages/Home'
+import Animals from './pages/Animals'
 
 function App() {
   return (
