@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
-// import Cave from '../components/Cave'
 
 const Country = () => {
   let { id } = useParams()
@@ -53,7 +52,6 @@ const Country = () => {
             ))
           : null}
       </div>
-      {/* {country && <Cave data={country} />} */}
     </div>
   )
 }

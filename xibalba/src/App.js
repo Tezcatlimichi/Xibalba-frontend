@@ -4,6 +4,7 @@ import Countries from './pages/Countries'
 import Country from './pages/Country'
 import Cave from './components/Cave'
 import Underwater from './components/Underwater'
+import Home from './pages/Home'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Nav />
       <main>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/countries" element={<Countries />} />
           <Route path="/countries/:id" element={<Country />} />
           <Route path="/countries/:id/cave/:caveId" element={<Cave />} />
