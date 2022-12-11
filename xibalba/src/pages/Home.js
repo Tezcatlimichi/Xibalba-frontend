@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
-  // const [fuana, setFuana] = useState([])
   let navigate = useNavigate()
   const [animalOfYear, setAnimalOfYear] = useState('')
   useEffect(() => {
     const getFuana = async () => {
       const response = await axios.get(`http://localhost:3001/fuana`)
-      // setFuana(response.data)
+
       setAnimalOfYear(response.data[0])
     }
     getFuana()
