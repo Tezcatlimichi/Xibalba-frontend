@@ -36,6 +36,8 @@ const Profile = () => {
     setForm(initialState)
   }
 
+  // const updateCave = async (event)
+
   return (
     <div>
       <h2>Add your explorations here</h2>
@@ -89,11 +91,66 @@ const Profile = () => {
         </div>
       </form>
       <div>
+        <h2>Update </h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="cave_name">Name</label>
+            <input
+              type="text"
+              id="name"
+              defaultValue={form.name}
+              onChange={handleChange}
+            />
+            <label htmlFor="cave_location">Location</label>
+            <input
+              type="text"
+              id="location"
+              defaultValue={form.location}
+              onChange={handleChange}
+            />
+            <label htmlFor="cave_details">Details</label>
+            <input
+              type="text"
+              id="details"
+              defaultValue={form.details}
+              onChange={handleChange}
+            />
+            <label htmlFor="cave_image">Image</label>
+            <input
+              type="text"
+              id="image"
+              defaultValue={form.image}
+              onChange={handleChange}
+            />
+            <label htmlFor="country" type="number">
+              Country
+            </label>
+            <select
+              id="countryId"
+              defaultValue={form.countryId}
+              onChange={handleChange}
+            >
+              <option value="1">United States</option>
+              <option value="2">Mexico</option>
+              <option value="3">Guatemala</option>
+              <option value="4">New Zealand</option>
+              <option value="5">Scotland</option>
+              <option value="6">Malaysia</option>
+              <option value="7">Philippines</option>
+            </select>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+
+      <div>
         <h1>Your caves</h1>
         {caves
-          ? caves.map((one) => (
+          ? caves.map((cave) => (
               <div>
-                <h1>{one.name}</h1>
+                <h1>{cave.name}</h1>
+                <h3> {cave.location}</h3>
+                <h3>{cave.details}</h3>
               </div>
             ))
           : null}
