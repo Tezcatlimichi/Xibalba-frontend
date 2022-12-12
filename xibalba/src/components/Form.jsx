@@ -1,51 +1,38 @@
-import { useState, useEffect } from 'react'
 import axios from 'axios'
-import ProfileCave from '../components/ProfileCave'
+import { useState } from 'react'
 
-const Profile = () => {
-  const initialState = {
-    name: '',
-    location: '',
-    details: '',
-    image: '',
-    countryId: '',
-    profileId: 1
-  }
+const Form = (props)=>{
+let initialState = {
+  name: '',
+  location: '',
+  details: '',
+  image: '',
+  countryId: '',
+  profileId:1
+}
+
 
   const [form, setForm] = useState(initialState)
-  const [caves, setCaves] = useState([])
 
-  useEffect(() => {
-    const getCaves = async () => {
-      const response = await axios.get(`http://localhost:3001/caves/profile/1`)
-      setCaves(response.data)
-    }
-    getCaves()
-  }, [])
+const handleUpdate = async (event)=>{
+  event.preventDefault()
+  await axios.put(`http://localhost:3001/caves/${props.caveInfo.caveId}`, form)
+  props.setFormToggle(false)
 
+}
   const handleChange = (event) => {
     setForm({
       ...form,
       [event.target.id]: event.target.value,
-      countryId: parseInt(event.target.value)
+      // countryId: parseInt(event.target.value)
     })
   }
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    let addCave = await axios.post(`http://localhost:3001/caves`, form)
-    setForm(initialState)
-  }
 
-  const updateCave = async (event) => {
-    event.preventDefault()
-    let updatedCave = await axios.put(`http://localhost:3001/caves/`)
-  }
 
-  return (
+  return(
     <div>
-      <h2>Add your explorations here</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleUpdate}>
         <div>
           <label htmlFor="cave_name">Name</label>
           <input
@@ -94,29 +81,7 @@ const Profile = () => {
           <button type="submit">Send</button>
         </div>
       </form>
-      <div>
-        <h1>Your caves</h1>
-      </div>
-      <div>
-        <section>
-          {caves
-            ? caves.map((cave) => (
-                <ProfileCave
-                  caveId={cave.id}
-                  caveName={cave.name}
-                  caveLocation={cave.location}
-                  caveDetails={cave.details}
-                  caveImage={cave.image}
-                  countryId={cave.countryId}
-                />
-              ))
-            : null}
-        </section>
-
-        <h1>Your Underwater caves</h1>
-      </div>
     </div>
   )
 }
-
-export default Profile
+export default Form
