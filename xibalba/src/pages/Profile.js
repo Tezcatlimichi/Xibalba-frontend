@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import ProfileCave from '../components/ProfileCave'
 
 const Profile = () => {
   const initialState = {
@@ -12,12 +13,14 @@ const Profile = () => {
   }
 
   const [form, setForm] = useState(initialState)
+  // const [update, setUpdate] = useState
   const [caves, setCaves] = useState([])
 
   useEffect(() => {
     const getCaves = async () => {
       const response = await axios.get(`http://localhost:3001/caves/profile/1`)
       setCaves(response.data)
+      console.log(response.data)
     }
     getCaves()
   }, [])
@@ -36,7 +39,10 @@ const Profile = () => {
     setForm(initialState)
   }
 
-  // const updateCave = async (event)
+  const updateCave = async (event) => {
+    event.preventDefault()
+    let updatedCave = await axios.put(`http://localhost:3001/caves/`)
+  }
 
   return (
     <div>
@@ -145,17 +151,23 @@ const Profile = () => {
 
       <div>
         <h1>Your caves</h1>
-        {caves
-          ? caves.map((cave) => (
-              <div>
-                <h1>{cave.name}</h1>
-                <h3> {cave.location}</h3>
-                <h3>{cave.details}</h3>
-              </div>
-            ))
-          : null}
       </div>
       <div>
+        <section>
+          {caves
+            ? caves.map((cave) => (
+                <ProfileCave
+                  caveId={cave.id}
+                  caveName={cave.name}
+                  caveLocation={cave.location}
+                  caveDetails={cave.details}
+                  caveImage={cave.image}
+                  countryId={cave.countryId}
+                />
+              ))
+            : null}
+        </section>
+
         <h1>Your Underwater caves</h1>
       </div>
     </div>
