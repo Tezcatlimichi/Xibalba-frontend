@@ -6,6 +6,8 @@ import Cave from './components/Cave'
 import Underwater from './components/Underwater'
 import Home from './pages/Home'
 import Animals from './pages/Animals'
+import AnimalDetails from './pages/AnimalDetails'
+import Profile from './pages/Profile'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             element={<Underwater />}
           />
           <Route path="/animals" element={<Animals />} />
+          <Route path="/animals/:id" element={<AnimalDetails />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
     </div>
