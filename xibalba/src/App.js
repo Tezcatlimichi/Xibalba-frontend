@@ -25,7 +25,7 @@ function App() {
           />
           <Route path="/animals" element={<Animals />} />
           <Route path="/animals/:id" element={<AnimalDetails />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/caves/profile/1" element={<Profile />} />
         </Routes>
       </main>
     </div>
