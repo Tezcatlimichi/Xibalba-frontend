@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Profile = () => {
@@ -7,10 +7,20 @@ const Profile = () => {
     location: '',
     details: '',
     image: '',
-    countryId: ''
+    countryId: '',
+    profileId: 1
   }
 
   const [form, setForm] = useState(initialState)
+  const [caves, setCaves] = useState([])
+
+  useEffect(() => {
+    const getCaves = async () => {
+      const response = await axios.get(`http://localhost:3001/caves/profile/1`)
+      setCaves(response.data)
+    }
+    getCaves()
+  }, [])
 
   const handleChange = (event) => {
     setForm({
@@ -78,6 +88,19 @@ const Profile = () => {
           <button type="submit">Send</button>
         </div>
       </form>
+      <div>
+        <h1>Your caves</h1>
+        {caves
+          ? caves.map((one) => (
+              <div>
+                <h1>{one.name}</h1>
+              </div>
+            ))
+          : null}
+      </div>
+      <div>
+        <h1>Your Underwater caves</h1>
+      </div>
     </div>
   )
 }
