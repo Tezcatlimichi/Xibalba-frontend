@@ -70,3 +70,8 @@ a:link{
 a:visited{
   color: black
 }
+.circular-image{
+  border-radius: 50%;
+  width: 400px;
+  height: auto;
+}

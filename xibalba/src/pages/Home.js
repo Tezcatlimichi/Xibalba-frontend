@@ -27,13 +27,11 @@ const Home = () => {
           viewAnimals()
         }}
       >
-        <h2>{animalOfYear.commonName}</h2>
         <img
           className="circular-image"
           src={animalOfYear.image}
           alt={animalOfYear.name}
         />
-        <h3>Scientific Name: {animalOfYear.scientificName}</h3>
       </div>
     </div>
   )
