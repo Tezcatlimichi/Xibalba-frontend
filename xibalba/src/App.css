@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.pyramid {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  /* position:absolute; left:90;top:100px; */
+}
+
+
+.pyramid_section {
+  flex: 1 1 100%;
+  background-color: rgb(148, 136, 10);
+  margin-bottom: 1px;
+  position:relative;  top:15px
+}
+
+.pyramid_section:nth-of-type(even) {
+  background-color:  rgb(148, 136, 10);
+  
+}
+
+.pyramid_section:hover {
+  background-color: rgb(103, 103, 53);
+}
+a:link{
+  text-decoration: none;
+  color: black
+}
+a:visited{
+  color: black
+}

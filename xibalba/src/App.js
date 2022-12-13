@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router'
+import './App.css'
 import Nav from './components/Nav'
 import Countries from './pages/Countries'
 import Country from './pages/Country'

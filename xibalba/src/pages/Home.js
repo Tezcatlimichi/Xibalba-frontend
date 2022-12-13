@@ -10,6 +10,7 @@ const Home = () => {
       const response = await axios.get(`http://localhost:3001/fuana`)
 
       setAnimalOfYear(response.data[0])
+      console.log()
     }
     getFuana()
   }, [])
@@ -20,7 +21,6 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Home</h2>
       <h3>2022 Animal of the year</h3>
       <div
         onClick={() => {
@@ -28,6 +28,11 @@ const Home = () => {
         }}
       >
         <h2>{animalOfYear.commonName}</h2>
+        <img
+          className="circular-image"
+          src={animalOfYear.image}
+          alt={animalOfYear.name}
+        />
         <h3>Scientific Name: {animalOfYear.scientificName}</h3>
       </div>
     </div>
