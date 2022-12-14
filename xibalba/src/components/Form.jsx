@@ -16,7 +16,7 @@ let initialState = {
 
 const handleUpdate = async (event)=>{
   event.preventDefault()
-  await axios.put(`http://localhost:3001/caves/${props.caveInfo.caveId}`, form)
+  await axios.put(`https://xibalba-backend.herokuapp.com/caves/${props.caveInfo.caveId}`, form)
   props.setFormToggle(false)
 
 }
@@ -78,7 +78,10 @@ const handleUpdate = async (event)=>{
             <option value="6">Malaysia</option>
             <option value="7">Philippines</option>
           </select>
-          <button type="submit">Send</button>
+          <div >
+          <button  id='update-button' className='ticket-buttons' type="submit">Send</button>
+          </div>
+         
         </div>
       </form>
     </div>

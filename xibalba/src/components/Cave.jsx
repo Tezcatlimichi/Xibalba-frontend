@@ -12,7 +12,7 @@ const Cave =()=>{
 
 useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(`http://localhost:3001/countries/${id}/cave/${caveId}`)
+      const response = await axios.get(` https://xibalba-backend.herokuapp.com/countries/${id}/cave/${caveId}`)
       setData(response.data.Caves[0])
     }
     getData()
@@ -24,9 +24,15 @@ useEffect(() => {
 
   return(
     <div>
-<h1>Individual Cave</h1>
-<h2>{data.name}</h2>
+
+<h1>{data.name}</h1>
 <h3>Location: {data.location}</h3>
+<h3>{data.details}</h3>
+<div className='cave-images'>
+<img src={data.imageOne} width="200"/>
+<img src={data.imageTwo} width="200"/>
+<img src={data.imageThree} width="200"/>
+</div>
     </div>
 
   )

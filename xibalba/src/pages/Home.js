@@ -7,7 +7,9 @@ const Home = () => {
   const [animalOfYear, setAnimalOfYear] = useState('')
   useEffect(() => {
     const getFuana = async () => {
-      const response = await axios.get(`http://localhost:3001/fuana`)
+      const response = await axios.get(
+        `https://xibalba-backend.herokuapp.com/fuana`
+      )
 
       setAnimalOfYear(response.data[0])
       console.log()

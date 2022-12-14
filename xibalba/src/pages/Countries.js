@@ -10,7 +10,9 @@ const Countries = () => {
 
   useEffect(() => {
     const getCountries = async () => {
-      const response = await axios.get(`http://localhost:3001/countries`)
+      const response = await axios.get(
+        `https://xibalba-backend.herokuapp.com/countries`
+      )
       setCountries(response.data)
     }
     getCountries()

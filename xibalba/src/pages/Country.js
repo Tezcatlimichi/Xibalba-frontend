@@ -9,7 +9,9 @@ const Country = () => {
 
   useEffect(() => {
     const getCountry = async () => {
-      const response = await axios.get(`http://localhost:3001/countries/${id}`)
+      const response = await axios.get(
+        `https://xibalba-backend.herokuapp.com/countries/${id}`
+      )
       setCountry(response.data)
     }
     getCountry()
@@ -24,8 +26,8 @@ const Country = () => {
   return (
     <div>
       <h1>{country.name}</h1>
-      <div>
-        <h1>Caves</h1>
+      <h1>Caves</h1>
+      <div className="countries">
         {country
           ? country.Caves.map((cave) => (
               <h2
@@ -33,13 +35,15 @@ const Country = () => {
                   viewCave(cave.id)
                 }}
               >
-                {cave.name}
+                <h3> {cave.name}</h3>
+                <h4> Located : {cave.location}</h4>
+                <img src={cave.imageTwo} width="200" />
               </h2>
             ))
           : null}
       </div>
-      <div>
-        <h1> Underwater Caves</h1>
+      <h1> Underwater Caves</h1>
+      <div className="countries">
         {country
           ? country.Underwaters.map((cave) => (
               <h2
@@ -47,7 +51,9 @@ const Country = () => {
                   viewUnderwater(cave.id)
                 }}
               >
-                {cave.name}
+                <h3>{cave.name}</h3>
+                <h4> Located : {cave.location}</h4>
+                <img src={cave.imageTwo} width="200" />
               </h2>
             ))
           : null}
