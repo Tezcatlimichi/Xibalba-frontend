@@ -8,15 +8,15 @@ const Nav = ()=>{
 
 <div className='pyramid' >
       <div className='pyramid_section'>
-      <Link to="/">Home</Link>
+      <Link className="link"to="/">Home</Link>
       </div>
       <div className='pyramid_section'>
     
-      <Link to="/caves/profile/1">Profile</Link>
+      <Link className="link" to="/caves/profile/1">Profile</Link>
       </div> 
       <div className='pyramid_section'>
 
-      <Link to="/countries">Explore</Link>
+      <Link  className="link" to="/countries">Explore</Link>
       </div>
       </div>
       

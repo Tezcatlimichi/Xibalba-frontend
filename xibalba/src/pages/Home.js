@@ -21,12 +21,20 @@ const Home = () => {
 
   return (
     <div>
-      <h3>2022 Animal of the year</h3>
+      <p className="intro">
+        Xibalba is the name of the underworld in Maya mythology. The entrance to
+        Xibalba was traditionally held to be a cave in the vicinity of Cobán,
+        Guatemala. Here you can discover the many entrances to the underworld
+        and document your own explorations!
+      </p>
       <div
+        className="animal-of-the-year"
         onClick={() => {
           viewAnimals()
         }}
       >
+        <h3>2022 Animal of the year</h3>
+
         <img
           className="circular-image"
           src={animalOfYear.image}

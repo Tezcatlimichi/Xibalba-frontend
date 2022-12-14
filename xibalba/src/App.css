@@ -1,33 +1,12 @@
 .App {
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -44,24 +23,24 @@
   height: 110px;
   -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
-  /* position:absolute; left:90;top:100px; */
+  background-color: rgb(	230, 229, 163);
 }
 
 
 .pyramid_section {
   flex: 1 1 100%;
-  background-color: rgb(148, 136, 10);
+  background-color: rgb(	230, 229, 163);
   margin-bottom: 1px;
   position:relative;  top:15px
 }
 
 .pyramid_section:nth-of-type(even) {
-  background-color:  rgb(148, 136, 10);
+  background-color: rgb(	230, 229, 163);
   
 }
 
 .pyramid_section:hover {
-  background-color: rgb(103, 103, 53);
+  background-color: rgb(	169, 175, 126);
 }
 a:link{
   text-decoration: none;
@@ -75,3 +54,43 @@ a:visited{
   width: 400px;
   height: auto;
 }
+
+.link{
+  background-color:rgb(	230, 229, 163) ;
+}
+.intro{
+  color:rgb(64, 65, 52);
+  font-weight: bold,
+}
+.animal-of-the-year{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+*{
+  background-color: rgb(	125, 143, 105);
+}
+.animals-container{
+  display: grid;
+  grid-template-rows: 1fr ;
+}
+/* Flashlight Overlay */
+/* :root {
+  cursor: none;
+  --cursorX: 50vw;
+  --cursorY: 50vh;
+}
+:root:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 10vmax at var(--cursorX) var(--cursorY),
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,.5) 80%,
+    rgba(0,0,0,.95) 100%
+  )
+} */
