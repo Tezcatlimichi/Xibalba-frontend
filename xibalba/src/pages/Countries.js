@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import '../App.css'
 
 const Countries = () => {
   let navigate = useNavigate()
@@ -20,14 +21,17 @@ const Countries = () => {
   }
 
   return (
-    <div>
+    <div className="countries">
       {countries.map((country) => (
         <div
           onClick={() => {
             viewCountry(country.id)
           }}
         >
-          <h1>{country.name}</h1>
+          <div className={country.id}>
+            <h1>{country.name}</h1>
+            <img src={country.image} width="200" />
+          </div>
         </div>
       ))}
     </div>

@@ -94,3 +94,7 @@ a:visited{
     rgba(0,0,0,.95) 100%
   )
 } */
+.countries{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
